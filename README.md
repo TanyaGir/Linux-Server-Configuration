@@ -215,13 +215,41 @@ We will use grader login for the following
 
   You should be inside the `/var/www/catalog/catalog ` directory and then install the virtual environment
   
-    - $ sudo pip install virtualenv
+   - $ sudo pip install virtualenv
    
-    - $ sudo virtualenv virenv
+   - $ sudo virtualenv virenv
    
-    - $ source virenv/bin/activate
+   - $ source virenv/bin/activate
    
-    - $ sudo chmod -R 777 virenv
+   - $ sudo chmod -R 777 virenv
+   
+# Install Flask, SQLAlchemy, etc
+
+  - $ sudo apt-get install python-pip
+  
+  - $ sudo pip install Flask
+  
+  - $ sudo pip install httplib2
+  
+  - $sudo pip install oauth2client
+  
+  - $sudo pip install sqlalchemy-utils
+  
+  - $sudo pip install psycopg2 
+  
+  - $sudo pip install requests
+  
+then use nano `__init__.py` to change `client_secrets.json` line to 
+ 
+  `/var/www/catalog/catalog/client-secrets.json`
+  
+and also change the host to amazon lightsail
+ 
+      public IP adress(18.188.139.111)
+ 
+      and port to 80
+
+  
 
 
 
