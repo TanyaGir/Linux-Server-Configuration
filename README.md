@@ -109,11 +109,11 @@ Configure a Linux Sever to host a Webapp securely
 
    - $ sudo nano /etc/ssh/sshd_config
 
-      Find the PermitRootLogin line and edit to no.
+         Find the PermitRootLogin line and edit to no.
       
 2. Also to enforce the key-based authentication
 
-       Find the PasswordAuthentication line and change text after to no
+         Find the PasswordAuthentication line and change text after to no
       
 3. After this, restart ssh again
 
