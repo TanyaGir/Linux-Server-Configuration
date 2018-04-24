@@ -260,7 +260,7 @@ and also change the host to amazon lightsail
 ```
 <VirtualHost *:80>
     ServerName [YOUR PUBLIC IP ADDRESS]  --18.188.139.111
-    ServerAlias [YOUR AMAZON LIGHTSAIL HOST NAME]  --      ec2-18-188-139-111.us-east-2.compute.amazonaws.com (public)
+    ServerAlias [YOUR AMAZON LIGHTSAIL HOST NAME]  --ec2-18-188-139-111.us-east-2.compute.amazonaws.com (public)
     ServerAdmin admin@35.167.27.204
     WSGIDaemonProcess catalog python-path=/var/www/catalog:/var/www/catalog/catalog/virenv/lib/python2.7/site-packages
     WSGIProcessGroup catalog
@@ -284,6 +284,10 @@ and also change the host to amazon lightsail
 3. Enable catalog configuration file with
 
  - $ sudo a2ensite catalog.conf
+ 
+4. Restart Apache
+
+- $ sudo service apache2 restart
  
 # Install and configure PostgreSQL
 
