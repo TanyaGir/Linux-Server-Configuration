@@ -99,23 +99,23 @@ It should go to your Download folder by default. It is a .pem file.We can use it
 
 # Disable root login
 
-1.To disable root login
+1. To disable root login
 
 - $ sudo nano /etc/ssh/sshd_config
 
       Find the PermitRootLogin line and edit to no.
       
-2.Also to enforce the key-based authentication
+2. Also to enforce the key-based authentication
 
-      Find the PasswordAuthentication line and change text after to no
+       Find the PasswordAuthentication line and change text after to no
       
-- After this, restart ssh again
+3. After this, restart ssh again
 
   - $ sudo service ssh restart
 
 # Change timezone to UTC
 
-1.Check the timezone with the date command.
+1. Check the timezone with the date command.
 
 This will display the current timezone after the time. If it's not UTC change it like this:
 
@@ -125,17 +125,17 @@ This will display the current timezone after the time. If it's not UTC change it
 
 1.Fisrt
 
-- $ sudo nano /etc/ssh/ssdh_config
+- $ sudo nano /etc/ssh/ssdh_config 
 
-2.then change the line Port 22 to:
+2. Then change the line Port 22 to:
 
     Port 2200
     
-3.Then restart the SSH service
+3. Then restart the SSH service
 
 - $ sudo service ssh restart
 
-4.Disconnect the server by $ ~. and then log back through port 2200: 
+4. Disconnect the server by $ ~. and then log back through port 2200: 
 
 - $ ssh -i ~/.ssh/udacity_key.rsa -p 2200 grader@18.188.139.111
 
@@ -157,10 +157,10 @@ We will use grader login for the following
 
 # Install Apache to serve a Python mod_wsgi application
 
-1.Install required packages
-- $ sudo apt-get install apache2
+1. Install required packages
+ - $ sudo apt-get install apache2
 
-- $ sudo apt-get install libapache2-mod-wsgi python-dev
+ - $ sudo apt-get install libapache2-mod-wsgi python-dev
 
 2. Enable mod_wsgi by
 
@@ -168,11 +168,12 @@ We will use grader login for the following
 
 - $ sudo service apache2 restart 
 
-Check for your page at your public IP (18.188.1139.111)
+  Check for your page at your public IP (18.188.1139.111)
 
-You should be able to view Apache2 Ubuntu Default Page
+  You should be able to view Apache2 Ubuntu Default Page
 
 3. Set up the folder structure
+
 - $ cd /var/www
 
 - $ sudo mkdir catalog
@@ -183,7 +184,7 @@ You should be able to view Apache2 Ubuntu Default Page
 
 4.Now we clone the project from Github: 
 
-   $ git clone [your link] catalog 
+- $ git clone [your link] catalog 
 
 
 
