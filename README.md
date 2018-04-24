@@ -250,6 +250,100 @@ and also change the host to amazon lightsail
       and port to 80
 
   
+# Configure and enable virtual host
+
+1. Open the following file
+
+  - $ sudo nano /etc/apache2/sites-available/catalog.conf
+  
+2. Paste the following code and save
+```
+<VirtualHost *:80>
+    ServerName [YOUR PUBLIC IP ADDRESS]  --18.188.139.111
+    ServerAlias [YOUR AMAZON LIGHTSAIL HOST NAME]  --      ec2-18-188-139-111.us-east-2.compute.amazonaws.com (public)
+    ServerAdmin admin@35.167.27.204
+    WSGIDaemonProcess catalog python-path=/var/www/catalog:/var/www/catalog/catalog/virenv/lib/python2.7/site-packages
+    WSGIProcessGroup catalog
+    WSGIScriptAlias / /var/www/catalog/catalog/catalog.wsgi
+    <Directory /var/www/catalog/catalog/>
+        Order allow,deny
+        Allow from all
+    </Directory>
+    Alias /static /var/www/catalog/catalog/static
+    <Directory /var/www/catalog/catalog/static/>
+        Order allow,deny
+        Allow from all
+    </Directory>
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    LogLevel warn
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+```
+  You can find the host name in this [link] : (http://www.hcidata.info/host2ip.cgi)
+
+3. Enable catalog configuration file with
+
+ - $ sudo a2ensite catalog.conf
+ 
+# Install and configure PostgreSQL
+
+  - $ sudo apt-get install libpq-dev python-dev
+  
+  - $ sudo apt-get install postgresql postgresql-contrib
+
+  - $ sudo su - postgres -i
+
+  You should see the username changed again in command line to,
+
+  `postgres@ip-172-26-0-120`
+
+  Now give `psql` command
+
+  - $ psql
+
+  Now we will get following prompt
+
+  `postgres=#`
+
+  Now we create a user to create and set up the database. I name my database `catalog` with user `catalog`
+
+  - $ CREATE USER catalog WITH PASSWORD test;
+
+  - $ ALTER USER catalog CREATEDB;
+
+  - $ CREATE DATABASE catalog WITH OWNER catalog;
+
+  Connect to database $ \c catalog
+
+  - $ REVOKE ALL ON SCHEMA public FROM public;
+
+  - $ GRANT ALL ON SCHEMA public TO catalog;
+
+  Quit the postgres command line: 
+
+  - $ \c  and then 
+
+  - $ exit
+
+  Use sudo nano command to change all engine to 
+
+  `engine = create_engine('postgresql://catalog:[your password]@localhost/catalog `
+
+  I changed the following line in the files `__init__.py,databse_setup.py,lotsofmenus.py`
+
+  `engine = create_engine('postgresql://catalog:test@localhost/catalog')`
+
+  Initiate the database if you have a script to do so:
+
+  - $ python lotsofmenus.py
+
+  Restart Apache server
+
+  - $ sudo service apache2 restart
+
+  Enter your public IP address or host name into the browser. 
+
+
 
 
 
