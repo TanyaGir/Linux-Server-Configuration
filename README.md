@@ -351,15 +351,21 @@ and also change the host to amazon lightsail
   For Authorized JavaScript origins include:
   
   Your Static IP ie. http://18.188.139.111
+  
   Your DNS Address ie. http://ec2-18-188-139-111.us-east-2.compute.amazonaws.com
+  
   http://localhost:5000
 
   For Authorized redirect URIs include:
   
   http://localhost:5000/login
+  
   http://localhost:5000/gconnect
+  
   http://ec2-18-188-139-111.us-east-2.compute.amazonaws.com/oauth2callback
+  
   http://ec2-18-188-139-111.us-east-2.compute.amazonaws.com/gconnect
+  
   http://ec2-18-188-139-111.us-east-2.compute.amazonaws.com/login
 
   Edit the client_secrets.json file and make sure the URIs match:
