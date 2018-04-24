@@ -252,7 +252,7 @@ and also change the host to amazon lightsail
   
 # Configure and enable virtual host
 
-1. Open the following file
+1. Edit the following file
 
   - $ sudo nano /etc/apache2/sites-available/catalog.conf
   
@@ -342,6 +342,38 @@ and also change the host to amazon lightsail
   - $ sudo service apache2 restart
 
   Enter your public IP address or host name into the browser. 
+  
+  You should be able to view the project.
+  
+# Login Authorization Configuration
+  Login to your google developer account, go into your API credentials for your app.
+
+  For Authorized JavaScript origins include:
+  
+  Your Static IP ie. http://18.188.139.111
+  Your DNS Address ie. http://ec2-18-188-139-111.us-east-2.compute.amazonaws.com
+  http://localhost:5000
+
+  For Authorized redirect URIs include:
+  
+  http://localhost:5000/login
+  http://localhost:5000/gconnect
+  http://ec2-18-188-139-111.us-east-2.compute.amazonaws.com/oauth2callback
+  http://ec2-18-188-139-111.us-east-2.compute.amazonaws.com/gconnect
+  http://ec2-18-188-139-111.us-east-2.compute.amazonaws.com/login
+
+  Edit the client_secrets.json file and make sure the URIs match:
+  
+  - $ sudo nano /var/www/catalog/catalog/client_secrets.json
+  
+  Restart apache2: 
+  - $ sudo service apache2 restart
+
+  Go to your DNS address on your browser ie: http://ec2-18-188-139-111.us-east-2.compute.amazonaws.com
+  Login with your Google Account.
+  View catalog data.
+  then you can also disconnect.
+
 
 
 
