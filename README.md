@@ -392,10 +392,27 @@ and also change the host to amazon lightsail
   
   then you can also disconnect.
 
+# Resources
 
+https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-14-04-lts
 
+mod_wsgi (Apache) [18]: http://flask.pocoo.org/docs/0.10/deploying/mod_wsgi/
 
+Virtual Environment:http://modwsgi.readthedocs.io/en/develop/user-guides/virtual-environments.html?highlight=addsitedir 
 
+Postgres Databsae setup:https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-16-04
+
+How to Move, Copy, and Delete Files in Linux [16]: http://www.hostingadvice.com/how-to/move-copy-delete-files-linux/
+
+# Acknowledgments
+
+- Udacity
+
+- Amazon AWS Lightsail
+
+- SteveWooding Project : https://github.com/SteveWooding/fullstack-nanodegree-linux-server-config
+
+- petergns : https://github.com/petergns/linux_server_catalog
 
 
 
