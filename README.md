@@ -215,13 +215,13 @@ We will use grader login for the following
 
   You should be inside the `/var/www/catalog/catalog ` directory and then install the virtual environment
   
-   - $ sudo pip install virtualenv
+    - $ sudo pip install virtualenv
    
-   - $ sudo virtualenv virenv
+    - $ sudo virtualenv virenv
    
-   - $ source virenv/bin/activate
+    - $ source virenv/bin/activate
    
-   - $ sudo chmod -R 777 virenv
+    - $ sudo chmod -R 777 virenv
 
 
 
