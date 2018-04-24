@@ -65,6 +65,42 @@ It should go to your Download folder by default. It is a .pem file.We can use it
 
 - $ sudo apt-get install finger
 
+# Set-up SSH keys for user grader
+
+1.Open a new Terminal window and input
+
+- $ ssh-keygen -f ~/.ssh/udacity_key.rsa
+- $ cat ~/.ssh/udacity_key.rsa.pub
+
+2.Copy the public key
+
+3.Going back to the first terminal window where you are logged into Amazon Lightsail as the root user, move to grader's folder by
+
+- $ cd /home/grader
+
+- $ mkdir .ssh
+
+- $ touch .ssh/authorized_keys
+
+- $ nano .ssh/authorized_keys
+
+- $ sudo chmod 700 /home/grader/.ssh
+
+- $ sudo chmod 644 /home/grader/.ssh/authorized_keys
+
+- $ sudo chown -R grader:grader /home/grader/.ssh
+
+- $ sudo service ssh restart
+
+4.Can now login as the grader user using the command:
+
+- $ ssh -i ~/.ssh/udacity_key.rsa grader@18.188.139.111
+
+
+
+
+
+
 # Disable root login
 - $ sudo nano /etc/ssh/sshd_config
 
@@ -73,6 +109,7 @@ It should go to your Download folder by default. It is a .pem file.We can use it
 - To  enforce the key-based authentication
 
       Find the PasswordAuthentication line and change text after to no
+      
 - After this, restart ssh again
 
   - $ sudo service ssh restart
