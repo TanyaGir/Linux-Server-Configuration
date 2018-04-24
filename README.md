@@ -31,4 +31,4 @@ Click the Account page at the bottom
 
 Click the 'Download' to download your private key
 
-  It should go to your Download folder by default. It is a .pem file.We can use it to log into our server 
+   It should go to your Download folder by default. It is a .pem file.We can use it to log into our server 
