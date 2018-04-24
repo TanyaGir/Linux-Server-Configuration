@@ -171,27 +171,27 @@ We will use grader login for the following
 
 2. Enable mod_wsgi by
 
-  - $ sudo a2enmod wsgi
+    - $ sudo a2enmod wsgi
 
-  - $ sudo service apache2 restart 
+    - $ sudo service apache2 restart 
 
-  Check for your page at your public IP (18.188.1139.111)
+   Check for your page at your public IP (18.188.1139.111)
 
-  You should be able to view Apache2 Ubuntu Default Page
+   You should be able to view Apache2 Ubuntu Default Page
 
 3. Set up the folder structure
 
-  - $ cd /var/www
+    - $ cd /var/www
 
-  - $ sudo mkdir catalog
+    - $ sudo mkdir catalog
 
-  - $ sudo chown -R grader:grader catalog
+    - $ sudo chown -R grader:grader catalog
 
-  - $ cd catalog
+    - $ cd catalog
 
 4. Now we clone the project from Github: 
 
-  - $ git clone [your link] catalog 
+    - $ git clone [your link] catalog 
 
 
 
