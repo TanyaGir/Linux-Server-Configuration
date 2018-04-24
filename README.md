@@ -391,6 +391,9 @@ and also change the host to amazon lightsail
   View catalog data.
   
   then you can also disconnect.
+# Author
+
+Tanya Sharma
 
 # Resources
 
