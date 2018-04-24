@@ -375,9 +375,12 @@ and also change the host to amazon lightsail
   - $ sudo nano /var/www/catalog/catalog/client_secrets.json
   
   Restart apache2: 
+  
   - $ sudo service apache2 restart
 
-  Go to your DNS address on your browser ie: http://ec2-18-188-139-111.us-east-2.compute.amazonaws.com
+  Go to your DNS address on your browser ie:
+  
+  `http://ec2-18-188-139-111.us-east-2.compute.amazonaws.com`
   
   Login with your Google Account.
   
