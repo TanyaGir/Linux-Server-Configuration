@@ -70,6 +70,7 @@ It should go to your Download folder by default. It is a .pem file.We can use it
 1.Open a new Terminal window and input
 
 - $ ssh-keygen -f ~/.ssh/udacity_key.rsa
+
 - $ cat ~/.ssh/udacity_key.rsa.pub
 
 2.Copy the public key
@@ -96,23 +97,101 @@ It should go to your Download folder by default. It is a .pem file.We can use it
 
 - $ ssh -i ~/.ssh/udacity_key.rsa grader@18.188.139.111
 
-
-
-
-
-
 # Disable root login
+
+1.To disable root login
+
 - $ sudo nano /etc/ssh/sshd_config
 
       Find the PermitRootLogin line and edit to no.
       
-- To  enforce the key-based authentication
+2.Also to enforce the key-based authentication
 
       Find the PasswordAuthentication line and change text after to no
       
 - After this, restart ssh again
 
   - $ sudo service ssh restart
+
+# Change timezone to UTC
+
+1.Check the timezone with the date command.
+
+This will display the current timezone after the time. If it's not UTC change it like this:
+
+- $ sudo timedatectl set-timezone UTC
+
+# Change SSH port from 22 to 2200
+
+1.Fisrt
+
+- $ sudo nano /etc/ssh/ssdh_config
+
+2.then change the line Port 22 to:
+
+    Port 2200
+    
+3.Then restart the SSH service
+
+- $ sudo service ssh restart
+
+4.Disconnect the server by $ ~. and then log back through port 2200: 
+
+- $ ssh -i ~/.ssh/udacity_key.rsa -p 2200 grader@18.188.139.111
+
+# Configuration Uncomplicated Firewall (UFW)
+
+- $ sudo ufw allow 2200/tcp
+
+- $ sudo ufw allow 80/tcp
+
+- $ sudo ufw allow 123/udp
+
+- $ sudo ufw enable
+
+We will use grader login for the following
+
+# Install Git version control software
+
+- $ sudo apt-get install git
+
+# Install Apache to serve a Python mod_wsgi application
+
+1.Install required packages
+- $ sudo apt-get install apache2
+
+- $ sudo apt-get install libapache2-mod-wsgi python-dev
+
+2. Enable mod_wsgi by
+
+- $ sudo a2enmod wsgi
+
+- $ sudo service apache2 restart 
+
+Check for your page at your public IP (18.188.1139.111)
+
+You should be able to view Apache2 Ubuntu Default Page
+
+3. Set up the folder structure
+- $ cd /var/www
+
+- $ sudo mkdir catalog
+
+- $ sudo chown -R grader:grader catalog
+
+- $ cd catalog
+
+4.Now we clone the project from Github: 
+
+   $ git clone [your link] catalog 
+
+
+
+
+
+
+
+    
 
 
 
