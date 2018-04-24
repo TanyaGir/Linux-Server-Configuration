@@ -329,7 +329,7 @@ and also change the host to amazon lightsail
 
   `engine = create_engine('postgresql://catalog:[your password]@localhost/catalog `
 
-  I changed the following line in the files `__init__.py,databse_setup.py,lotsofmenus.py`
+  For example - I changed the following line in the files `__init__.py,databse_setup.py,lotsofmenus.py`
 
   `engine = create_engine('postgresql://catalog:test@localhost/catalog')`
 
