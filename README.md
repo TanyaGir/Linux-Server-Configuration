@@ -15,10 +15,20 @@ Create an Amazon AWS Lightsail account.
 
 Create a Ubuntu Linux-based instance on Lightsail.
 
-   - 1.Create new instance i.e. my_instance_name on Lightsail.
+   - Create new instance i.e. my_instance_name on Lightsail.
 
-   - 2.Create and attach a static ip for your Lightsail instance i.e. my_static_ip.
+   - Create and attach a static ip for your Lightsail instance i.e. my_static_ip.
 
-   - 3.Note the Public and Private IPs for your instance, and add the following ports:
+   - Note the Public and Private IPs for your instance, and add the following ports:
 
+     Static/Public IP - Example: 18.188.139.111 
+  
+     Private IP - Example: 172.26.12.18
 
+Click on the Connect tab 
+
+Click the Account page at the bottom 
+
+Click the 'Download' to download your private key
+
+  It should go to your Download folder by default. It is a .pem file.We can use it to log into our server 
