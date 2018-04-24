@@ -31,7 +31,7 @@ Configure a Linux Sever to host a Webapp securely
 
 5. Click the 'Download' to download your private key
 
-  It should go to your Download folder by default. It is a .pem file.We can use it to log into our server 
+    It should go to your Download folder by default. It is a .pem file.We can use it to log into our server 
 
 6. Click the 'Networking' tab and find the 'Add another' at the bottom
 
@@ -47,7 +47,7 @@ Configure a Linux Sever to host a Webapp securely
  
  3. We now use this key to log into our Amazon Lightsail Server
 
-   - $ ssh -i ~/.ssh/YourAWSKey.pem ubuntu@18.188.139.111
+    - $ ssh -i ~/.ssh/YourAWSKey.pem ubuntu@18.188.139.111
  
  4. Amazon Lightsail does not allow you to log in as a root user, but we can switch to become a root user. Type
    
