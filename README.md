@@ -191,7 +191,43 @@ We will use grader login for the following
 
 4. Now we clone the project from Github: 
 
-    - $ git clone [your link] catalog 
+    - $ git clone [your link] catalog
+
+# Create and Update catalog.wsgi file for this installation
+
+1. Create a .wsgi file: inside of the following location `/var/www/catalog/catalog`
+   
+    -  $sudo nano catalog.wsgi 
+   
+2. Add the following into this file
+    ``` 
+    import sys
+    import logging
+    logging.basicConfig(stream=sys.stderr)
+    sys.path.insert(0, "/var/www/catalog/")
+
+    from catalog import app as application
+    application.secret_key = 'super_secret_key'
+    ```
+3. Rename the `application.py` to `__init__.py`
+
+# Install the virtual machine
+
+  You should be inside the `/var/www/catalog/catalog ` directory and then install the virtual environment
+  
+   - $ sudo pip install virtualenv
+   
+   - $ sudo virtualenv virenv
+   
+   - $ source virenv/bin/activate
+   
+   - $ sudo chmod -R 777 virenv
+
+
+
+
+
+
 
 
 
